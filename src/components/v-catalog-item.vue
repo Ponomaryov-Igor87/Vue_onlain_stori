@@ -8,7 +8,7 @@
 
     <p class="v-catalog-item_name">{{product_data.name}}</p>
     <p class="v-catalog-item_prais">prais:{{product_data.price}}</p>
-    <button class="v-catalog-item_add_to_cart_btn btn" @click="sendDataToParent">add to cart</button>
+    <button class="v-catalog-item_add_to_cart_btn btn" @click="addToCart">add to cart</button>
   </div>
 </template>
 
@@ -21,20 +21,20 @@ export default {
       type: Object,
       default() {
         return {};
-      }
-    }
+      },
+    },
   },
   data() {
     return {};
   },
   computed: {},
   methods: {
-    sendDataToParent() {
-      this.$emit("sendDataToParent", this.product_data.article);
-    }
+    addToCart() {
+      this.$emit("addToCart", this.product_data);
+    },
   },
   watch: {},
-  mounted() {}
+  mounted() {},
 };
 </script>
     
